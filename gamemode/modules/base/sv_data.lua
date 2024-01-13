@@ -469,6 +469,7 @@ Players
 ---------------------------------------------------------------------------]]
 local meta = FindMetaTable("Player")
 function meta:restorePlayerData()
+    if self:IsBot() then return end
     self.DarkRPUnInitialized = true
 
     DarkRP.retrievePlayerData(self, function(data)
